@@ -132,7 +132,8 @@ This program contains the description of the robot base model for the Clearpath 
 
     <!--Gazebo Plugin for simulating Kingfisher dynamics-->
     <gazebo>
-      <plugin name="heron_dynamic" filename="libheron_gazebo_plugins.so">
+      <!--<plugin name="heron_dynamic" filename="libheron_gazebo_plugins.so">-->
+      <plugin name="kingfisher_dynamic" filename="libkingfisher_gazebo_plugins.so">
         </plugin>
     </gazebo>
 
