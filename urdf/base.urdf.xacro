@@ -135,5 +135,33 @@ This program contains the description of the robot base model for the Clearpath 
       <plugin name="heron_dynamic" filename="libheron_gazebo_plugins.so">
         </plugin>
     </gazebo>
+
+    <gazebo>
+      <!-- Either plugin should worl -->
+      <!--<plugin name="imu_plugin" filename="libgazebo_ros_imu.so">-->
+      <plugin name="imu_plugin" filename="libhector_gazebo_ros_imu.so">
+	<alwaysOn>true</alwaysOn>
+	<bodyName>base_footprint</bodyName>
+	<xyzOffset>0.0 0.0 0.0</xyzOffset>
+	<rpyOffset>0.0 0.0 0.0</rpyOffset>
+	<topicName>imu</topicName>
+	<serviceName>imu_service</serviceName>
+	<gaussianNoise>0.0</gaussianNoise>
+	<updateRate>20.0</updateRate>
+      </plugin>
+    </gazebo>
+
+    <gazebo>
+      <plugin name="gps_plugin" filename="libhector_gazebo_ros_gps.so">
+	<alwaysOn>true</alwaysOn>
+	<bodyName>base_footprint</bodyName>
+	<referenceLatitude>36.6</referenceLatitude>
+	<referenceLongitude>-121.9</referenceLongitude>
+	<referenceAltitude>10.0</referenceAltitude>
+	<topicName>fix</topicName>
+	<gaussianNoise>1.0 2.0 3.0</gaussianNoise>
+	<updateRate>1.0</updateRate>
+      </plugin>
+    </gazebo>
         
 </robot>
