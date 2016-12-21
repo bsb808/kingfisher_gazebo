@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="gps_gazebo" params="name">
+    <gazebo>
+      <plugin name="gps_plugin_${name}" filename="libhector_gazebo_ros_gps.so">
+	<alwaysOn>true</alwaysOn>
+	<bodyName>base_footprint</bodyName>
+	<referenceLatitude>36.6</referenceLatitude>
+	<referenceLongitude>-121.9</referenceLongitude>
+	<referenceAltitude>10.0</referenceAltitude>
+	<topicName>fix</topicName>
+	<gaussianNoise>1.0 2.0 3.0</gaussianNoise>
+	<updateRate>1.0</updateRate>
+      </plugin>
+    </gazebo>  
+  </xacro:macro>
+</robot>

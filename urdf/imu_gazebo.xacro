@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="imu_gazebo" params="name">
+    <gazebo>
+      <!-- Either plugin should work -->
+      <!--<plugin name="imu_plugin_${name}" filename="libgazebo_ros_imu.so">-->
+      <plugin name="imu_plugin_${name}" filename="libhector_gazebo_ros_imu.so">
+	<alwaysOn>true</alwaysOn>
+	<bodyName>base_footprint</bodyName>
+	<xyzOffset>0.0 0.0 0.0</xyzOffset>
+	<rpyOffset>0.0 0.0 0.0</rpyOffset>
+	<topicName>imu</topicName>
+	<serviceName>imu_service</serviceName>
+	<gaussianNoise>0.0</gaussianNoise>
+	<updateRate>20.0</updateRate>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+</robot>

@@ -6,7 +6,7 @@
 
  <include file="$(find gazebo_ros)/launch/empty_world.launch"></include>
  
- <arg name="urdf" default="$(find kingfisher_gazebo)/urdf/base.urdf.xacro" />
+ <arg name="urdf" default="$(find kingfisher_gazebo)/urdf/base_gazebo.xacro" />
  <param name="robot_description" command="$(find xacro)/xacro.py $(arg urdf)"/>
 
  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
