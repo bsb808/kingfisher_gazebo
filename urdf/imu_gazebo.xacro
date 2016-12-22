@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="imu_gazebo" params="name">
+  <xacro:macro name="kingfisher_imu_gazebo" params="name">
     <gazebo>
       <!-- Either plugin should work -->
       <!--<plugin name="imu_plugin_${name}" filename="libgazebo_ros_imu.so">-->
@@ -12,7 +12,7 @@
 	<topicName>imu</topicName>
 	<serviceName>imu_service</serviceName>
 	<gaussianNoise>0.0</gaussianNoise>
-	<updateRate>20.0</updateRate>
+	<updateRate>10.0</updateRate>
       </plugin>
     </gazebo>
   </xacro:macro>

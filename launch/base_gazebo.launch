@@ -2,12 +2,17 @@
 
 <launch>
 
- <param name="use_sim_time" value="true" />
+ <!-- Command line arguments -->
+ <arg name="name" default="kingfisher" />
+ <arg name="imu" default="false" />
+ <arg name="gps" default="false" />
+ <arg name="microstrain" default="false" />
 
+ <param name="use_sim_time" value="true" />
  <include file="$(find gazebo_ros)/launch/empty_world.launch"></include>
  
- <arg name="urdf" default="$(find kingfisher_gazebo)/urdf/base_gazebo.xacro" />
- <param name="robot_description" command="$(find xacro)/xacro.py $(arg urdf)"/>
+ <arg name="urdf" default="$(find kingfisher_gazebo)/urdf/base_gazebo.xacro"/>
+ <param name="robot_description" command="$(find xacro)/xacro.py $(arg urdf) imu:=$(arg imu) gps:=$(arg gps) microstrain:=$(arg microstrain)"/>
 
  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 

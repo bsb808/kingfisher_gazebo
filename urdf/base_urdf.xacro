@@ -132,6 +132,5 @@ This program contains the description of the robot base model for the Clearpath 
         <material>Gazebo/Yellow</material>
     </gazebo>
 
-    <!--Gazebo Plugin for simulating Kingfisher dynamics-->
     </xacro:macro>
 </robot>
