@@ -6,10 +6,11 @@
       <!--<plugin name="imu_plugin_${name}" filename="libgazebo_ros_imu.so">-->
       <plugin name="imu_plugin_${name}" filename="libhector_gazebo_ros_imu.so">
 	<alwaysOn>true</alwaysOn>
-	<bodyName>base_footprint</bodyName>
+	<bodyName>base_link</bodyName>
+	<frame_id>odom</frame_id>
 	<xyzOffset>0.0 0.0 0.0</xyzOffset>
 	<rpyOffset>0.0 0.0 0.0</rpyOffset>
-	<topicName>imu</topicName>
+	<topicName>imu/data</topicName>
 	<serviceName>imu_service</serviceName>
 	<gaussianNoise>0.0</gaussianNoise>
 	<updateRate>10.0</updateRate>

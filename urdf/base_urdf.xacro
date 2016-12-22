@@ -55,6 +55,7 @@ This program contains the description of the robot base model for the Clearpath 
     
     <!-- BASE-FOOTPRINT -->
     <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin, navigation stack depends on this frame -->
+    <!--
     <link name="base_footprint">
         <inertial>
             <mass value="0.0001" />
@@ -81,7 +82,7 @@ This program contains the description of the robot base model for the Clearpath 
         <parent link="base_footprint"/>
         <child link="base_link" />
     </joint>
-
+    -->
 
     <!-- BASE-LINK -->
     <!--Actual body/chassis of the robot-->
@@ -116,7 +117,8 @@ This program contains the description of the robot base model for the Clearpath 
 
     <!-- PANEL-LINKS -->
     <!-- Top Plate -->
-    <kingfisher_part parent="base_footprint" name="left_panel" mesh="left_panel" 
+    <!--kingfisher_part parent="base_footprint" name="left_panel" mesh="left_panel" -->
+    <kingfisher_part parent="base_link" name="left_panel" mesh="left_panel" 
           translateX="0.0" translateY="-0.35" translateZ="0.05" 
           rotateX="${M_PI/2}" rotateY="0.0" rotateZ="${M_PI/2}"
           color="Yellow" />
@@ -124,7 +126,8 @@ This program contains the description of the robot base model for the Clearpath 
         <material>Gazebo/Yellow</material>
     </gazebo>
 
-    <kingfisher_part parent="base_footprint" name="right_panel" mesh="right_panel" 
+    <!--kingfisher_part parent="base_footprint" name="right_panel" mesh="right_panel" -->
+    <kingfisher_part parent="base_link" name="right_panel" mesh="right_panel" 
           translateX="0.0" translateY="0.35" translateZ="0.05" 
           rotateX="${M_PI/2}" rotateY="0.0" rotateZ="${-M_PI/2}"
           color="Yellow" />
