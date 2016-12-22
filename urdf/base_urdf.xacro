@@ -122,7 +122,8 @@ This program contains the description of the robot base model for the Clearpath 
           translateX="0.0" translateY="-0.35" translateZ="0.05" 
           rotateX="${M_PI/2}" rotateY="0.0" rotateZ="${M_PI/2}"
           color="Yellow" />
-    <gazebo reference="base_footprint_left_panel_part">
+    <!--<gazebo reference="base_footprint_left_panel_part">-->
+    <gazebo reference="base_link_left_panel_part">
         <material>Gazebo/Yellow</material>
     </gazebo>
 
@@ -131,9 +132,12 @@ This program contains the description of the robot base model for the Clearpath 
           translateX="0.0" translateY="0.35" translateZ="0.05" 
           rotateX="${M_PI/2}" rotateY="0.0" rotateZ="${-M_PI/2}"
           color="Yellow" />
-    <gazebo reference="base_footprint_right_panel_part">
+    <!--<gazebo reference="base_footprint_right_panel_part">-->
+    <gazebo reference="base_link_right_panel_part">
         <material>Gazebo/Yellow</material>
+        <turnGravityOff>false</turnGravityOff>
     </gazebo>
+
 
     </xacro:macro>
 </robot>

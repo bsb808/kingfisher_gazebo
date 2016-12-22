@@ -3,19 +3,25 @@
   <xacro:macro name="kingfisher_gps_gazebo" params="name">
     <gazebo>
       <plugin name="gps_plugin_${name}" filename="libhector_gazebo_ros_gps.so">
+	<updateRate>1.0</updateRate>
 	<alwaysOn>true</alwaysOn>
 	<bodyName>base_link</bodyName>
+	<frameId>base_link</frameId>
+	<topicName>gps/fix</topicName>
+	<velocityTopicName>fix_velocity</velocityTopicName>
+
 	<referenceLatitude>36.6</referenceLatitude>
 	<referenceLongitude>-121.9</referenceLongitude>
 	<referenceAltitude>10.0</referenceAltitude>
-	<topicName>gps/fix</topicName>
-	<velocityTopicName>fix_velocity</velocityTopicName>
+
+	<offset>0.0 0.0 0.0</offset>
 	<drift>0.0 0.0 0.0</drift>
 	<gaussianNoise>0.1 0.1 0.1</gaussianNoise>
-	<velocityDrift>0 0 0</velocityDrift>
+
+	<velocityOffset>0.0 0.0 0.0</velocityOffset>
+	<velocityDrift>0.0 0.0 0.0</velocityDrift>
 	<velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
-	<frameId>base_link</frameId>
-	<updateRate>1.0</updateRate>
+
       </plugin>
     </gazebo>  
   </xacro:macro>
