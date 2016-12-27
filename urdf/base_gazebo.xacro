@@ -22,14 +22,13 @@
   <!-- USV dynamic model -->
   <xacro:usv_gazebo name="kingfisher"/>
 
-  <!-- Optional sensor plugins -->
+  <!-- Optional sensor plugins - called by macros defined above -->
   <xacro:if value="$(arg gps)">
     <xacro:kingfisher_gps_gazebo name="kingfisher"/>
   </xacro:if>
   <xacro:if value="$(arg imu)">
     <xacro:kingfisher_imu_gazebo name="kingfisher"/>
   </xacro:if>
-
   <xacro:if value="$(arg p3d)">
     <xacro:kingfisher_p3d_gazebo name="kingfisher"/>
   </xacro:if>
