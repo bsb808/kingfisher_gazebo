@@ -4,20 +4,23 @@
 
  <!-- Command line arguments -->
  <arg name="name" default="kingfisher" />
- <arg name="imu" default="false" />
- <arg name="gps" default="false" />
+ <arg name="imu" default="true" />
+ <arg name="gps" default="true" />
+ <arg name="p3d" default="true" />
  <arg name="microstrain" default="false" />
 
  <param name="use_sim_time" value="true" />
  <include file="$(find gazebo_ros)/launch/empty_world.launch"></include>
  
  <arg name="urdf" default="$(find kingfisher_gazebo)/urdf/base_gazebo.xacro"/>
- <param name="robot_description" command="$(find xacro)/xacro.py $(arg urdf) imu:=$(arg imu) gps:=$(arg gps) microstrain:=$(arg microstrain)"/>
+ <param name="robot_description" command="$(find xacro)/xacro.py $(arg urdf) imu:=$(arg imu) gps:=$(arg gps) microstrain:=$(arg microstrain) p3d:=$(arg p3d)"/>
 
  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
 <!-- Spawn robot in gazebo -->
 <node name="spawn_kingfisher_model" pkg="gazebo_ros" type="spawn_model"
     args="-x 0 -y 0 -z 1 -unpause -urdf -param robot_description -model mobile_base"/>
+
+  <node pkg="rqt_topic" type="rqt_topic" name="rqt_topic" />
 
 </launch>

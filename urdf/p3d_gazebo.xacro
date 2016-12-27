@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="kingfisher_p3d_gazebo" params="name">
+    <gazebo>
+      <plugin name="p3d_plugin_${name}" filename="libgazebo_ros_p3d.so">
+	<frameName>map</frameName>
+	<updateRate>10.0</updateRate>
+	<topicName>p3d/odom</topicName>
+	<bodyName>base_link</bodyName>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+</robot>

@@ -6,11 +6,15 @@
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/base_urdf.xacro" />
   <!-- Defines the "usv_gazebo" macro which implements the plugin for USV dynamics -->
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/usv_gazebo.xacro" />
+  
   <!-- Defines the macro for simulated GPS -->
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/gps_gazebo.xacro" />
+  
   <!-- Defines the macro for simulated IMU -->
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/imu_gazebo.xacro" />
 
+  <!-- Macro for P3D ground truth -->
+  <xacro:include filename="$(find kingfisher_gazebo)/urdf/p3d_gazebo.xacro" />
 
   <!-- Call the macros defined above -->
   <!-- includes basic description witout plugins -->
@@ -25,5 +29,11 @@
   <xacro:if value="$(arg imu)">
     <xacro:kingfisher_imu_gazebo name="kingfisher"/>
   </xacro:if>
+
+  <xacro:if value="$(arg p3d)">
+    <xacro:kingfisher_p3d_gazebo name="kingfisher"/>
+  </xacro:if>
+
+
 
 </robot>
