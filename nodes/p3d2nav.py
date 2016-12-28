@@ -24,15 +24,16 @@ import geonav_transform.navsat_conversions as nc
 def rotate_vector(q,v):
     '''
     Rotate vector v by quaternion q
+    Assumes that q is given as a list in order x, y, z, w
     '''
-    vu = tf.transformations.unit_vector(v)
-    q2 = list(vu)
-    q2.append(0.0)
+    qv = list(v)
+    qv.append(0.0)
     out = tf.transformations.quaternion_multiply(
-        tf.transformations.quaternion_multiply(q, q2), 
+        tf.transformations.quaternion_multiply(q, qv), 
         tf.transformations.quaternion_conjugate(q)
         )[:3]
-    return out*tf.transformations.vector_norm(v)
+    return out
+
 class Node():
     def __init__(self,olat,olong):
         self.outmsg = Odometry()
@@ -70,6 +71,7 @@ class Node():
              data.pose.pose.orientation.y,
              data.pose.pose.orientation.z,
              data.pose.pose.orientation.w]
+        q = tf.transformations.quaternion_inverse(q)
         newv = rotate_vector(q,origv)
         self.outmsg.twist.twist.linear.x = newv[0]
         self.outmsg.twist.twist.linear.y = newv[1]
