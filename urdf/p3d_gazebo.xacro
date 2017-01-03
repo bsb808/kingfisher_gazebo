@@ -8,7 +8,7 @@
 	<!--How to define an empty string in xacro?-->
 	<!--<robotNamespace>""</robotNamespace>-->
 	<updateRate>10.0</updateRate>
-	<topicName>p3d/odom</topicName>
+	<topicName>p3d_odom</topicName>
 	<xyzOffset>0 0 0</xyzOffset>
 	<rpyOffset>0 0 0</rpyOffset>
 	<gaussianNoise>0</gaussianNoise>-->

@@ -37,8 +37,8 @@ def rotate_vector(q,v):
 class Node():
     def __init__(self,olat,olong):
         self.outmsg = Odometry()
-        self.outpub = rospy.Publisher("odometry/nav",Odometry,queue_size=10)
-        self.sub = rospy.Subscriber("p3d/odom",Odometry,self.p3dcallback)
+        self.outpub = rospy.Publisher("nav_odom",Odometry,queue_size=10)
+        self.sub = rospy.Subscriber("p3d_odom",Odometry,self.p3dcallback)
         rospy.loginfo("Subscribing to %s"%self.sub.name)
         self.rxodom = False
         self.originLat = olat
