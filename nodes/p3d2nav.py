@@ -43,7 +43,7 @@ class Node():
         self.rxodom = False
         self.originLat = olat
         self.originLong = olong
-        utmx, utmy, utmzone = nc.LLtoUTM(self.originLat,self.originLong)
+        utmy, utmx, utmzone = nc.LLtoUTM(self.originLat,self.originLong)
         self.originX = utmx
         self.originY = utmy
         self.originZone = utmzone
@@ -57,8 +57,9 @@ class Node():
         # Find lat/long based on origin
         utmx = self.originX + data.pose.pose.position.x
         utmy = self.originY + data.pose.pose.position.y
-        lat, lon = nc.UTMtoLL(utmx,utmy,self.originZone)
+        lat, lon = nc.UTMtoLL(utmy,utmx,self.originZone)
         #print("Lat %.10f, Long %.10f"%(lat,lon))
+        #print("X %.10f, Y %.10f"%(utmx,utmy))
         self.outmsg.pose.pose.position.x = lon
         self.outmsg.pose.pose.position.y = lat
         
