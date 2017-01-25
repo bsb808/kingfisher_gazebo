@@ -2,6 +2,10 @@
 
 <launch>
 
+  <!-- For setting debug level to debug -->
+  <env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find kingfisher_gazebo)/config/custom_rosconsole.conf"/>
+
   <!-- Command line arguments -->
   <arg name="name" default="kingfisher" />
   <arg name="imu" default="true" />
