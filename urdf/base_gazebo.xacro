@@ -5,7 +5,7 @@
   <!-- Defines the "kingfisher_base" macro -->
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/kingfisher_urdf.xacro" />
   <!-- Defines the "usv_gazebo" macro which implements the plugin for USV dynamics -->
-  <xacro:include filename="$(find kingfisher_gazebo)/urdf/usv_gazebo.xacro" />
+  <xacro:include filename="$(find usv_gazebo_plugins)/urdf/usv_gazebo_dynamics_plugin.xacro" />
     
   <!-- Defines the macro for simulated GPS -->
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/gps_gazebo.xacro" />
