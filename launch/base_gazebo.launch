@@ -23,7 +23,7 @@
   
   <!-- Spawn robot in gazebo -->
   <node name="spawn_kingfisher_model" pkg="gazebo_ros" type="spawn_model"
-	args="-x 0 -y 0 -z 1 -unpause -urdf -param robot_description -model mobile_base"/>
+	args="-x 0.0 -y 0.0 -z 1.0 -R 0.0 -P 0.0 -Y 0.0 -unpause -urdf -param robot_description -model mobile_base"/>
   
   <!--
   <node pkg="rqt_topic" type="rqt_topic" name="rqt_topic" />
