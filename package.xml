@@ -15,7 +15,8 @@
   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
   <license>TODO</license>
 
-
+  <run_depend>gazebo_ros</run_depend>
+  <build_depend>gazebo_ros</build_depend>ls
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
@@ -45,6 +46,6 @@
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
-
+    <gazebo_ros gazebo_model_path="${prefix}/models"/> 
   </export>
 </package>

@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="pond">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>30 -30 20 0 0.275643 2.35619</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>1</cast_shadows>
+	  <transparency>0.5</transparency>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+	     <ambient>0 0 0.5 0.5</ambient>
+	     <diffuse>0 0 0.5 0.5</diffuse>
+	     <specular>0 0 0.5 0.5</specular>
+	     <emissive>0 0 0 0</emissive>
+            <!--<script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Blue</name>
+            </script>-->
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name="heightmap">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <heightmap>
+              <!--<uri>file://media/materials/textures/heightmap_bowl.png</uri>-->
+            <!--<uri>file://pondmap.png</uri>-->
+              <uri>file://media/pondmap.png</uri>
+              <size>100 100 12 </size>
+              <pos>0 0 -11</pos>
+            </heightmap>
+          </geometry>
+        </collision>
+        <visual name="visual_abcedf">
+          <geometry>
+            <heightmap>
+              <use_terrain_paging>false</use_terrain_paging>
+              <texture>
+                <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <texture>
+                <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <blend>
+                <min_height>2</min_height>
+                <fade_dist>5</fade_dist>
+              </blend>
+              <blend>
+                <min_height>4</min_height>
+                <fade_dist>5</fade_dist>
+              </blend>
+              <!--<uri>file://pondmap.png</uri>-->
+              <uri>file://media/pondmap.png</uri>
+              <!--<uri>file://media/materials/textures/heightmap_bowl.png</uri>-->
+              <size>100 100 12</size>
+              <pos>0 0 -11</pos>
+            </heightmap>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
