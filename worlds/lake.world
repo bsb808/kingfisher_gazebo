@@ -72,9 +72,10 @@
         <collision name="collision">
           <geometry>
             <heightmap>
-              <!--<uri>file://media/materials/textures/heightmap_bowl.png</uri>-->
-            <!--<uri>file://pondmap.png</uri>-->
-              <uri>file://media/pondmap.png</uri>
+	      <!-- This file is in the models directory of the ROS package
+	      The export tag in the package.xml file tells Gazebo to include
+	      This in the path. -->
+              <uri>file://pondmap.png</uri>
               <size>100 100 12 </size>
               <pos>0 0 -11</pos>
             </heightmap>
@@ -102,9 +103,10 @@
                 <min_height>4</min_height>
                 <fade_dist>5</fade_dist>
               </blend>
-              <!--<uri>file://pondmap.png</uri>-->
-              <uri>file://media/pondmap.png</uri>
-              <!--<uri>file://media/materials/textures/heightmap_bowl.png</uri>-->
+	      <!-- This file is in the models directory of the ROS package
+	      The export tag in the package.xml file tells Gazebo to include
+	      This in the path. -->
+              <uri>file://pondmap.png</uri>
               <size>100 100 12</size>
               <pos>0 0 -11</pos>
             </heightmap>
