@@ -89,7 +89,7 @@ This program contains the description of the robot base model for the Clearpath 
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-	<box size = "0.1 0.1 0.1"/> <!--making it slightly bigger in x and z direction-->
+	<box size = "1.35 0.98 0.2"/> <!--making it slightly bigger in x and z direction-->
       </geometry>
     </collision>     
   </link>
