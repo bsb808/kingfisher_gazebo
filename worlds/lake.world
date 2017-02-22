@@ -12,6 +12,7 @@
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
+
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
@@ -38,6 +39,36 @@
         </collision>
         <visual name='visual'>
           <cast_shadows>1</cast_shadows>
+	  <transparency>0.9</transparency>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='water_plane'>
+      <static>1</static>
+      <pose>0 0 0.5 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>1</cast_shadows>
 	  <transparency>0.5</transparency>
           <geometry>
             <plane>
@@ -56,13 +87,47 @@
             </script>-->
           </material>
         </visual>
-        <velocity_decay>
-          <linear>0</linear>
-          <angular>0</angular>
-        </velocity_decay>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <!-- Add a buoy -->
+    <model name="buoy1m">
+      <static>0</static>
+      <pose> 10 10 0.75 0 0 0 </pose>
+      <link name="buoy1l">
+	<inertial>
+	  <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+	<collision name="buoy1c">
+	  <geometry>
+	    <cylinder>
+	      <radius>0.25</radius>
+	      <length>1.5</length>
+	    </cylinder>
+	  </geometry>
+	</collision>
+	<visual name="buoy1v">
+	  <geometry>
+	    <cylinder>
+	      <radius>0.25</radius>
+	      <length>1.5</length>
+	    </cylinder>
+	  </geometry>
+	  <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Red</name>
+            </script>
+          </material>
+	</visual>
       </link>
     </model>
 
@@ -114,6 +179,5 @@
         </visual>
       </link>
     </model>
-
   </world>
 </sdf>
