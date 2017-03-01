@@ -11,11 +11,13 @@
   <arg name="imu" default="true" />
   <arg name="gps" default="true" />
   <arg name="p3d" default="true" />
+  <arg name="world" default="lake.world" />
   <arg name="microstrain" default="false" />
   
   <param name="use_sim_time" value="true" />
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find kingfisher_gazebo)/worlds/lake_buoy.world"/>
+    <!--<arg name="world_name" value="$(find kingfisher_gazebo)/worlds/lake_buoy.world"/>-->
+    <arg name="world_name" value="$(find kingfisher_gazebo)/worlds/$(arg world)"/>
   </include>
   
   <arg name="urdf" default="$(find kingfisher_gazebo)/urdf/base_gazebo.xacro"/>

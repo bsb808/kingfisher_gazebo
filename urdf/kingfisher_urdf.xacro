@@ -63,6 +63,7 @@ This program contains the description of the robot base model for the Clearpath 
     </visual>
   </link>
   
+
   <gazebo reference="base_footprint">
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
@@ -87,7 +88,7 @@ This program contains the description of the robot base model for the Clearpath 
     </visual>
     
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 ${HH}" rpy="0 0 0" />
       <geometry>
 	<box size = "1.35 0.98 0.2"/> <!--making it slightly bigger in x and z direction-->
       </geometry>
@@ -121,5 +122,38 @@ This program contains the description of the robot base model for the Clearpath 
   <gazebo reference="base_footprint_right_panel_part">
     <material>Gazebo/Yellow</material>
   </gazebo>
-        
+
+  <!-- Define a location for the camera to sit -->
+  <xacro:property name="camera_size" value="0.05" /> <!-- Size of square 'camera' box -->
+  
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.32 0 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${camera_size} ${camera_size} ${camera_size}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${camera_size} ${camera_size} ${camera_size}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>  
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>    
+  <gazebo reference="camera_link">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
 </robot>

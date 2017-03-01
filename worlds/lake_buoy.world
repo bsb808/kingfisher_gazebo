@@ -60,81 +60,24 @@
         <gravity>1</gravity>
       </link>
     </model>
-    <model name="water_plane">
-      <static>1</static>
-      <pose>0 0 5 0 -0 0</pose>
-      <link name="link">
-        <visual name="visual">
-          <cast_shadows>1</cast_shadows>
-          <transparency>0.5</transparency>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <material>
-            <ambient>0 0 0.5 0.5</ambient>
-            <diffuse>0 0 0.5 0.5</diffuse>
-            <specular>0 0 0.5 0.5</specular>
-            <emissive>0 0 0 0</emissive>
-            <!--<script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Blue</name>
-            </script>-->
-          </material>
-        </visual>
-      </link>
-    </model>
-    <model name="heightmap">
-      <pose>0 0 5 0 0 0</pose>
-      <static>true</static>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <heightmap>
-              <!-- This file is in the models directory of the ROS package
-	      The export tag in the package.xml file tells Gazebo to include
-	      This in the path. -->
-              <uri>file://pondmap.png</uri>
-              <size>100 100 12</size>
-              <pos>0 0 -11</pos>
-            </heightmap>
-          </geometry>
-        </collision>
-        <visual name="visual_abcedf">
-          <geometry>
-            <heightmap>
-              <use_terrain_paging>false</use_terrain_paging>
-              <texture>
-                <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
-                <normal>file://media/materials/textures/flat_normal.png</normal>
-                <size>1</size>
-              </texture>
-              <texture>
-                <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
-                <normal>file://media/materials/textures/flat_normal.png</normal>
-                <size>1</size>
-              </texture>
-              <blend>
-                <min_height>2</min_height>
-                <fade_dist>5</fade_dist>
-              </blend>
-              <blend>
-                <min_height>4</min_height>
-                <fade_dist>5</fade_dist>
-              </blend>
-              <!-- This file is in the models directory of the ROS package
-	      The export tag in the package.xml file tells Gazebo to include
-	      This in the path. -->
-              <uri>file://pondmap.png</uri>
-              <size>100 100 12</size>
-              <pos>0 0 -6</pos>
-            </heightmap>
-          </geometry>
-        </visual>
-      </link>
-    </model>
+
+
+
+    <!-- The models below should be included in kingfisher_gazebo package -->
+    <include>
+      <!-- Note - the pose tag doesn't seem to work for heightmaps, so you need
+      to go into the model file to change the altitutde/height fo the lake!-->
+      <pose> 0 0 5 0 0 0 </pose>
+      <uri>model://models/lake</uri>
+    </include>
+
+    <!-- Should be at the same height as the water level in USV and buoyancy 
+    plugin configurations -->
+    <include>
+      <pose> 0 0 5 0 0 0 </pose>
+      <uri>model://models/water_plane</uri>
+    </include>
+
 
     <!-- Buoys -->
     <include>
@@ -185,7 +128,7 @@
     <include>
       <uri>model://models/buoy_blue</uri>
       <pose> 6 -9 10 0 0 0</pose>
-      <name>bb1></name>
+      <name>bb1</name>
     </include>
 
     <!--
