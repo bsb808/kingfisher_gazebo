@@ -19,7 +19,7 @@ from sensor_msgs.msg import NavSatFix
 from nav_msgs.msg import Odometry
 
 # ROS geonav_transform package
-import geonav_transform.navsat_conversions as nc
+import geonav_transform.geonav_conversions as nc
 
 def rotate_vector(q,v):
     '''
