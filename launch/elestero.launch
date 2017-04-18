@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
 
 <launch>
+
+
   <!-- Starts gazebo with El Estero world, spawns Kingfisher, etc -->
+  <arg name="world" default="elestero.world" />
   <include file="$(find kingfisher_gazebo)/launch/kingfisher_gazebo_worlds.launch">
-    <arg name="world" value="elestero.world"/>
+    <arg name="world" value="$(arg world)"/>
+    <!--<arg name="world" value="elestero_potentials.world"/>-->
   </include>
 
   <!-- Takes output from P3D Gazebo plugin to simulate Microstrain Nav. -->
