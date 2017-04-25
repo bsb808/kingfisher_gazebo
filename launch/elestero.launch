@@ -2,11 +2,23 @@
 
 <launch>
 
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="6.0" />
+  <arg name="P" default="0" />
+  <arg name="R" default="0" />
+  <arg name="Y" default="0" />
 
   <!-- Starts gazebo with El Estero world, spawns Kingfisher, etc -->
   <arg name="world" default="elestero.world" />
   <include file="$(find kingfisher_gazebo)/launch/kingfisher_gazebo_worlds.launch">
     <arg name="world" value="$(arg world)"/>
+    <arg name="x" value="$(arg x)"/>
+    <arg name="y" value="$(arg y)"/>
+    <arg name="z" value="$(arg z)"/>
+    <arg name="P" value="$(arg P)"/>
+    <arg name="R" value="$(arg R)"/>
+    <arg name="Y" value="$(arg Y)"/>
     <!--<arg name="world" value="elestero_potentials.world"/>-->
   </include>
 

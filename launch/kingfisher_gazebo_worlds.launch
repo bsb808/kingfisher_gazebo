@@ -13,6 +13,13 @@
   <arg name="p3d" default="true" />
   <arg name="world" default="lake.world" />
   <arg name="microstrain" default="false" />
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="6.0" />
+  <arg name="P" default="0" />
+  <arg name="R" default="0" />
+  <arg name="Y" default="0" />
+
   
   <param name="use_sim_time" value="true" />
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -27,7 +34,9 @@
   
   <!-- Spawn robot in gazebo -->
   <node name="spawn_kingfisher_model" pkg="gazebo_ros" type="spawn_model"
-	args="-x 0.0 -y 0.0 -z 6.0 -R 0.0 -P 0.0 -Y 0.0 -unpause -urdf -param robot_description -model mobile_base"/>
+	args="-x $(arg x) -y $(arg y) -z $(arg z) 
+	      -R $(arg R) -P $(arg P) -Y $(arg Y)
+	      -unpause -urdf -param robot_description -model mobile_base"/>
   
   <!--
   <node pkg="rqt_topic" type="rqt_topic" name="rqt_topic" />
