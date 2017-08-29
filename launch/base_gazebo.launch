@@ -11,7 +11,7 @@
   <arg name="imu" default="true" />
   <arg name="gps" default="true" />
   <arg name="p3d" default="true" />
-  <arg name="microstrain" default="false" />
+  <arg name="microstrain" default="true" />
   
   <param name="use_sim_time" value="true" />
   <include file="$(find gazebo_ros)/launch/empty_world.launch">

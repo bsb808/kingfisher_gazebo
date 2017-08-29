@@ -16,7 +16,7 @@
   <license>TODO</license>
 
   <run_depend>gazebo_ros</run_depend>
-  <build_depend>gazebo_ros</build_depend>ls
+  <build_depend>gazebo_ros</build_depend>
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
