@@ -23,7 +23,7 @@
   </include>
 
   <!-- Takes output from P3D Gazebo plugin to simulate Microstrain Nav. -->
-  <node pkg="kingfisher_gazebo" type="p3d2nav.py" name="p3d2nav">
+  <node pkg="kingfisher_gazebo" type="p3d2nav.py" name="GPS_IMU">
     <param name="gazebo_origin_lat" value="36.596524" type="double" />
     <param name="gazebo_origin_long" value="-121.888169" type="double" />
   </node>
