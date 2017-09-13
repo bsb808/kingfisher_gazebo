@@ -32,8 +32,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 This program contains the description of the robot base model for the Clearpath Kingfisher
 -->
-
 <robot name="kingfisher" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="kingfisher_base">
+
+
 
   <!-- Included URDF/XACRO Files -->
   <xacro:include filename="$(find kingfisher_description)/urdf/materials.urdf.xacro" />
@@ -42,8 +45,8 @@ This program contains the description of the robot base model for the Clearpath 
   
   <!-- PROPERTY LIST -->
   <!--All units in m-kg-s-radians unit system -->
-  <property name="M_PI" value="3.1415926535897931" />
-  <property name="HH" value="0.09" />
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="HH" value="0.09" />
   <!-- BASE-FOOTPRINT -->
   <!-- base_fotporint is a fictitious link(frame) that is on the ground right below base_link origin, navigation stack depends on this frame -->
   <link name="base_footprint">
@@ -156,4 +159,6 @@ This program contains the description of the robot base model for the Clearpath 
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+
+</xacro:macro>
 </robot>

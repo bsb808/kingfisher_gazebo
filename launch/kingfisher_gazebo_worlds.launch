@@ -28,7 +28,7 @@
   </include>
   
   <arg name="urdf" default="$(find kingfisher_gazebo)/urdf/base_gazebo.xacro"/>
-  <param name="robot_description" command="$(find xacro)/xacro.py $(arg urdf) imu:=$(arg imu) gps:=$(arg gps) microstrain:=$(arg microstrain) p3d:=$(arg p3d)"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg urdf) imu:=$(arg imu) gps:=$(arg gps) microstrain:=$(arg microstrain) p3d:=$(arg p3d)"/>
   
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   

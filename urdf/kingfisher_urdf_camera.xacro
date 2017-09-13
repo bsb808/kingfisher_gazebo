@@ -42,8 +42,8 @@ This program contains the description of the robot base model for the Clearpath 
   
   <!-- PROPERTY LIST -->
   <!--All units in m-kg-s-radians unit system -->
-  <property name="M_PI" value="3.1415926535897931" />
-  <property name="HH" value="0.09" />
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="HH" value="0.09" />
   <!-- BASE-FOOTPRINT -->
   <!-- base_fotporint is a fictitious link(frame) that is on the ground right below base_link origin, navigation stack depends on this frame -->
   <link name="base_footprint">

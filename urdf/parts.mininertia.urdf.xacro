@@ -41,24 +41,24 @@ incorporate collision.
 	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
 	xmlns:xacro="http://ros.org/wiki/xacro" name="kingfisher_part">
 	
-	<property name="x_com" value="0.00000000" /> <!-- com : center of mass -->
-	<property name="y_com" value="0.00000000" /> <!-- com : center of mass -->
-	<property name="z_com" value="0.00000000" /> <!-- com : center of mass -->
+	<xacro:property name="x_com" value="0.00000000" /> <!-- com : center of mass -->
+	<xacro:property name="y_com" value="0.00000000" /> <!-- com : center of mass -->
+	<xacro:property name="z_com" value="0.00000000" /> <!-- com : center of mass -->
 	
-	<property name="x_size" value="1.0" /> 
-	<property name="y_size" value="1.0" /> 
-	<property name="z_size" value="1.0" />
+	<xacro:property name="x_size" value="1.0" /> 
+	<xacro:property name="y_size" value="1.0" /> 
+	<xacro:property name="z_size" value="1.0" />
 	
-	<property name="min_inertia" value="0.00001"/>
+	<xacro:property name="min_inertia" value="0.00001"/>
 	
-	<property name="mass" value="${min_inertia}" /> <!-- in kg-->
+	<xacro:property name="mass" value="${min_inertia}" /> <!-- in kg-->
 	
-	<property name="ixx_com_cs" value="${min_inertia}" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
-	<property name="ixy_com_cs" value="0.0" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
-	<property name="ixz_com_cs" value="0.0" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
-	<property name="iyy_com_cs" value="${min_inertia}" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
-	<property name="iyz_com_cs" value="0.00" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
-	<property name="izz_com_cs" value="${min_inertia}" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
+	<xacro:property name="ixx_com_cs" value="${min_inertia}" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
+	<xacro:property name="ixy_com_cs" value="0.0" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
+	<xacro:property name="ixz_com_cs" value="0.0" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
+	<xacro:property name="iyy_com_cs" value="${min_inertia}" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
+	<xacro:property name="iyz_com_cs" value="0.00" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
+	<xacro:property name="izz_com_cs" value="${min_inertia}" /> <!-- at center of mass aligned with coordinate system, kg*m^2-->
 	
 	<xacro:macro name="kingfisher_part" params="parent name mesh translateX translateY translateZ rotateX rotateY rotateZ color">
 		<joint name="${parent}_${name}_joint" type="fixed">
