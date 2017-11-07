@@ -20,27 +20,18 @@
 	<geometry>
 	  <heightmap>
 	    <use_terrain_paging>false</use_terrain_paging>
+
 	    <texture>
 	      <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
 	      <normal>file://media/materials/textures/flat_normal.png</normal>
 	      <size>1</size>
 	    </texture>
-	    <texture>
-	      <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
-	      <normal>file://media/materials/textures/flat_normal.png</normal>
-	      <size>1</size>
-	    </texture>
+
 	    <blend>
 	      <min_height>2</min_height>
-	      <fade_dist>5</fade_dist>
+	      <fade_dist>1</fade_dist>
 	    </blend>
-	    <blend>
-	      <min_height>4</min_height>
-	      <fade_dist>5</fade_dist>
-	    </blend>
-	    <!-- This file is in the models directory of the ROS package
-		 The export tag in the package.xml file tells Gazebo to include
-		 This in the path. -->
+
 	    <uri>file://lake/pondmap.png</uri>
 	    <size>100 100 12</size>
 	    <pos>0 0 -6</pos>
