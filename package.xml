@@ -16,6 +16,13 @@
   <license>TODO</license>
 
   <run_depend>gazebo_ros</run_depend>
+
+  <!-- Needed for gazebo_ros_p3d -->
+  <run_depend>gazebo_plugins</run_depend>
+
+  <!-- Needed for hector_gazebo_ros_gps / imu -->
+  <run_depend>hector_gazebo_plugins</run_depend>
+
   <build_depend>gazebo_ros</build_depend>
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
