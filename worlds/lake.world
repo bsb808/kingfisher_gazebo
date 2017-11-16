@@ -2,6 +2,7 @@
 <sdf version="1.4">
   <world name="pond">
 
+
     <scene>
       <sky>
         <clouds>
@@ -9,6 +10,7 @@
         </clouds>
       </sky>
     </scene>
+
 
     <!-- A global light source -->
     <include>
@@ -85,6 +87,7 @@
     <include>
       <pose> 0 0 5 0 0 0 </pose>
       <uri>model://models/ocean</uri>
+      <!--<uri>model://models/water_plane</uri>-->
     </include>
 
   </world>

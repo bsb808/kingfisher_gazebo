@@ -41,8 +41,10 @@ This program contains the description of the robot base model for the Clearpath 
   <!-- Included URDF/XACRO Files -->
   <xacro:include filename="$(find kingfisher_description)/urdf/materials.urdf.xacro" />
   <!-- Replace original Kingfisher file with new one with minimial inertia-->
+  <!--
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/parts.mininertia.urdf.xacro" />
-  
+  -->
+
   <!-- PROPERTY LIST -->
   <!--All units in m-kg-s-radians unit system -->
   <xacro:property name="M_PI" value="3.1415926535897931" />
@@ -52,14 +54,14 @@ This program contains the description of the robot base model for the Clearpath 
   <link name="base_footprint">
     <inertial>
       <mass value="1e-5" />
-      <origin xyz="0 0 ${HH} " />
+      <origin xyz="0 0 0.09 " />
       <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
 	       iyy="1e-6" iyz="0.0" 
 	       izz="1e-6" />
     </inertial>
     
     <visual>
-      <origin xyz="0 0 ${HH}" rpy="0 0 0" />
+      <origin xyz="0 0 0.09" rpy="0 0 0" />
       <geometry>
 	<box size="0.001 0.001 0.001" />
       </geometry>
@@ -77,13 +79,13 @@ This program contains the description of the robot base model for the Clearpath 
     <inertial>
       <mass value="29" />
       <!--This is the pose of the inertial reference frame, relative to the link reference frame. The origin of the inertial reference frame needs to be at the center of gravity. The axes of the inertial reference frame do not need to be aligned with the principal axes of the inertia.-->
-      <origin xyz="0 0 ${HH}" />
+      <origin xyz="0 0 0.09" />
       <!--The 3x3 rotational inertia matrix. Because the rotational inertia matrix is symmetric, only 6 above-diagonal elements of this matrix are specified here, using the attributes ixx, ixy, ixz, iyy, iyz, izz.-->
       <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10" /> 
     </inertial>
         
     <visual>
-      <origin xyz="0 0 ${HH}" rpy="${M_PI/2} 0 ${M_PI/2}" />
+      <origin xyz="0 0 0.09" rpy="${3.14159/2} 0 ${3.14159/2}" />
       <geometry>
 	<mesh filename="package://kingfisher_description/meshes/kingfisher_base.stl" />
       </geometry>
@@ -91,14 +93,14 @@ This program contains the description of the robot base model for the Clearpath 
     </visual>
     
     <collision>
-      <origin xyz="0 0 ${HH}" rpy="0 0 0" />
+      <origin xyz="0 0 0.09" rpy="0 0 0" />
       <geometry>
 	<box size = "1.35 0.98 0.2"/> <!--making it slightly bigger in x and z direction-->
       </geometry>
     </collision>     
   </link>
   <joint name="base_footprint_joint" type="fixed">
-    <origin xyz="0 0 ${HH}" rpy="0 0 0" />
+    <origin xyz="0 0 0.09" rpy="0 0 0" />
     <parent link="base_footprint"/>
     <child link="base_link" />
   </joint>
@@ -112,7 +114,7 @@ This program contains the description of the robot base model for the Clearpath 
   <!-- Top Plate -->
   <kingfisher_part parent="base_footprint" name="left_panel" mesh="left_panel" 
 		   translateX="0.0" translateY="-0.35" translateZ="${0.05+HH*2}" 
-		   rotateX="${M_PI/2}" rotateY="0.0" rotateZ="${M_PI/2}"
+		   rotateX="${3.14159/2}" rotateY="0.0" rotateZ="${3.14159/2}"
 		   color="Yellow" />
   <gazebo reference="base_footprint_left_panel_part">
     <material>Gazebo/Yellow</material>
@@ -120,7 +122,7 @@ This program contains the description of the robot base model for the Clearpath 
   
   <kingfisher_part parent="base_footprint" name="right_panel" mesh="right_panel" 
 		   translateX="0.0" translateY="0.35" translateZ="${0.05+HH*2}" 
-		   rotateX="${M_PI/2}" rotateY="0.0" rotateZ="${-M_PI/2}"
+		   rotateX="${3.14159/2}" rotateY="0.0" rotateZ="${-3.14159/2}"
 		   color="Yellow" />
   <gazebo reference="base_footprint_right_panel_part">
     <material>Gazebo/Yellow</material>

@@ -8,12 +8,13 @@
 
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-14.5433 -158.187 52.9625 7.23354e-17 0.696 1.508</pose>
+        <pose>69.3326 -28.345 563.398 -1.28668e-15 1.52764 1.57219</pose>
+        <!--<pose>-14.5433 -158.187 52.9625 7.23354e-17 0.696 1.508</pose>-->
         <!--<pose>30 -30 20 0 0.275643 2.35619</pose>-->
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
-
+    <!--
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
@@ -63,7 +64,8 @@
         <gravity>1</gravity>
       </link>
     </model>
-    
+    -->
+
     <!-- The models below should be included in kingfisher_gazebo package -->
     <include>
       <!-- Note - the pose tag doesn't seem to work for heightmaps, so you need
@@ -80,36 +82,14 @@
     </include>
 
     <model name='Target'>
-      <pose>-24.228 -116.953 5 0 0 0</pose>
+      <pose>15 60 5 0 0 0</pose>
       <static>true</static>
       <link name='link'>
         <visual name='visual'>
 	  <transparency>0</transparency>
           <geometry>
             <cylinder>
-              <radius>1.0</radius>
-              <length>0.50</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Green</name>
-            </script>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name='Obstacle'>
-      <pose>-23.628 -95.053 5 0 0 0</pose>
-      <static>true</static>
-      <link name='link'>
-        <visual name='visual'>
-	  <transparency>0</transparency>
-          <geometry>
-            <cylinder>
-              <radius>1.0</radius>
+              <radius>2.0</radius>
               <length>0.50</length>
             </cylinder>
           </geometry>
@@ -117,6 +97,50 @@
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Red</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+<model name='Obs'>
+      <pose>-5 0 5 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <visual name='visual'>
+	  <transparency>0</transparency>
+          <geometry>
+            <cylinder>
+              <radius>2.0</radius>
+              <length>0.50</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Yellow</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='Start'>
+      <pose>-15 -50 5 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <visual name='visual'>
+	  <transparency>0</transparency>
+          <geometry>
+            <cylinder>
+              <radius>2.0</radius>
+              <length>0.50</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Green</name>
             </script>
           </material>
         </visual>

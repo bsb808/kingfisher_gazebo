@@ -2,6 +2,10 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro"
        name="kingfisher">
 
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="HH" value="0.09" />
+  <xacro:property name="camera_size" value="0.05" /> <!-- Size of square 'camera' box -->
+
   <!-- Defines the "kingfisher_base" macro -->
   <xacro:include filename="$(find kingfisher_gazebo)/urdf/kingfisher_urdf.xacro" />
   <!--<xacro:include filename="$(find kingfisher_gazebo)/urdf/kingfisher_urdf_camera.xacro" />-->
