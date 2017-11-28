@@ -7,6 +7,7 @@
        value="$(find kingfisher_gazebo)/config/custom_rosconsole.conf"/>
 
   <!-- Command line arguments -->
+  <arg name="gui" default="true" />
   <arg name="name" default="kingfisher" />
   <arg name="imu" default="true" />
   <arg name="gps" default="true" />
@@ -25,6 +26,7 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!--<arg name="world_name" value="$(find kingfisher_gazebo)/worlds/lake_buoy.world"/>-->
     <arg name="world_name" value="$(find kingfisher_gazebo)/worlds/$(arg world)"/>
+    <arg name="gui" value="$(arg gui)"/>
     <arg name="verbose" value="true"/>
   </include>
   

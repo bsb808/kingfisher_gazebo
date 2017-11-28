@@ -74,9 +74,9 @@
 
     <!-- The models below should be included in kingfisher_gazebo package -->
     <include>
-      <!-- Note - the pose tag doesn't seem to work for heightmaps, so you need
-      to go into the model file to change the altitutde/height fo the lake!-->
-      <pose> 0 0 5 0 0 0 </pose>
+      <!-- Note - the pose tag doesn't work for heightmaps, so you need
+      to go into the model file to change the altitutde/height fo the lake!
+      See the Gazebo issue: https://bitbucket.org/osrf/gazebo/issues/2167-->
       <uri>model://models/lake</uri>
     </include>
 
