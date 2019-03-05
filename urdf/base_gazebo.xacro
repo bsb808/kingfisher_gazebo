@@ -7,6 +7,9 @@
   <!--<xacro:include filename="$(find kingfisher_gazebo)/urdf/kingfisher_urdf_camera.xacro" />-->
   <!-- Defines the "usv_gazebo" macro which implements the plugin for USV dynamics -->
   <xacro:include filename="$(find usv_gazebo_plugins)/urdf/usv_gazebo_dynamics_plugin.xacro" />
+
+  <xacro:include filename="$(find usv_gazebo_plugins)/urdf/wamv_gazebo_thrust_plugin.xacro" />
+  
   <!-- Testing old plugin -->
   <!--<xacro:include filename="$(find kingfisher_plugins)/urdf/kingfisher_plugin.xacro" />-->
   
@@ -26,8 +29,11 @@
   <!-- includes basic description witout plugins -->
   <xacro:kingfisher_base />
   <!-- USV dynamic model -->
-  <xacro:usv_gazebo name="kingfisher"/>
+  <xacro:usv_dynamics_gazebo name="kingfisher"/>
 
+  <!-- USV thrust mdoel -->
+  <xacro:usv_thrust_gazebo name="kingfisher"/>
+  
   <!-- Optional sensor plugins - called by macros defined above -->
   <xacro:if value="$(arg gps)">
     <xacro:kingfisher_gps_gazebo name="kingfisher"/>
